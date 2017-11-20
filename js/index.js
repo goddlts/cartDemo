@@ -12,8 +12,16 @@ $(function () {
         $.fn.fullpage.moveSectionDown();
       });
     },
+    onLeave: function (link, index) {
+      // 当离开某一屏的时候
+      $('.more').fadeOut();
+    },
     afterLoad: function (link, index) {
+      // 当完全进入某一屏
+      $('.more').fadeIn();
+      
       $(this).addClass('selected');
+      
     }
   });
 })

@@ -12,7 +12,7 @@
   right: 60px;
   z-index: 1001;
   animation: screen01-more 0.3s linear infinite alternate;
-}
+} 
 @keyframes screen01-more {
   from {
     transform: translate(0, -10px);
@@ -92,8 +92,9 @@
   position: absolute;
   bottom: 300px;
   left: 50%;
-  transform: translateX(-50%);
-  margin-left: 410px;
+  /* margin-left: -95px; */
+  transform: translateX(299px);
+  z-index: 1000;
 }
 .screen02 .search .key {
   position: absolute;
@@ -101,6 +102,44 @@
   left: 120px;
   opacity: 0;
   transition: all 1s linear 1s;
+  
+}
+.screen02 .list {
+  position: absolute;
+  bottom: 205px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  transform-origin: right bottom;
+  transition: all 1s linear 3s;
+}
+.screen02 .list .sofa {
+  display: none;
 }
 
+/* 第二屏完全显示执行动画 */
+.selected .screen02 .search {
+  animation: screen02-search 4s linear forwards;
+}
+.selected .screen02 .key {
+  opacity: 1;
+}
+
+.selected .screen02 .list {
+  transform: translateX(-50%) scale(1);
+}
+
+@keyframes screen02-search {
+  0% {
+
+  }
+  25% {
+    transform: translateX(-50%);
+  }
+  75% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translate(90px, -140px) scale(0.7);
+  }
+}
 
