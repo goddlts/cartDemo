@@ -195,15 +195,26 @@
   transform: translate(-250px, -240px);
   display: none;
 }
-
 .screen03 .newSafo {
   position: absolute;
   left: 50%;
   bottom: 0;
   transform: translate(-250px, -240px);
   display: none;
+  z-index: 999;
 }
-
+/* 第三屏过渡到第四屏的动画 */
+.screen03 .newSafo.animated {
+  animation: screen3to4 1.5s linear ;
+}
+@keyframes screen3to4 {
+  from {
+    transform: translate(-250px, -240px);
+  }
+  to {
+    transform: translate(-50px, 515px);
+  }
+}
 /* 第三屏幕动画 */
 .selected .screen03 .safo {
   display: block;
@@ -219,4 +230,80 @@
 }
 .selected .screen03 .cart img:last-child {
   display: block;
+}
+
+/* 第四屏 */
+.screen04 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url('../images/04-bg.png') no-repeat center bottom;
+}
+.screen04 .clound {
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  transform: translateX(-50%);
+  animation: screen04-clound 20s linear infinite alternate;
+  z-index: 1000;
+}
+.screen04 .text {
+  position: absolute;
+  left: 50%;
+  top: 200px;
+  transform: translateX(-50%);
+}
+.screen04 .text img:last-child {
+  display: none;
+}
+.screen04 .cart {
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+.screen04 .cart .sofaImg {
+  position: absolute;
+  left: 150px;
+  top:-50px;
+  z-index: -1;
+  display: none;
+}
+.screen04 .address {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 200px;
+  transform: translateX(-50%);
+}
+.screen04 .address img:last-child {
+  position: absolute;
+  left: 50%; 
+  top: 55px;
+  transform: translateX(-50%);
+  display: none;
+}
+
+/* 动画结束显示 */
+
+
+/* 第四屏动画 */
+@keyframes screen04-clound {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.screen04 .cart.animated {
+  animation: screen04-cart 2s linear forwards;
+}
+@keyframes screen04-cart {
+  from {
+  }
+  to {
+    transform: translateX(2000px);
+  }
 }
