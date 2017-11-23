@@ -35,14 +35,17 @@ $(function () {
             });
           });
         });
-      }
+      } 
     },
     afterLoad: function (link, index) {
       // 当完全进入某一屏
       $('.more').fadeIn();
       
       $(this).addClass('selected');
-     
+      // 第五屏动画
+      $('.screen05 .handImg').on('transitionend', function () {
+        $('.screen05 .mouse02Img').show();
+      })
     }
   });
 })
